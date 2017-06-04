@@ -31,9 +31,11 @@ const defaulStyles = {
     height: 150,
   },
   info: {
-    flex: 0.55,
+    flex: 0.8,
     alignItems: 'center',
-    padding: 30,
+    paddingLeft: 30,
+    paddingRight: 30,
+    paddingTop: 20,
   },
   slide: {
     flex: 1,
@@ -50,8 +52,8 @@ const defaulStyles = {
   },
   description: {
     color: '#000',
-    fontSize: 15,
-    fontFamily : 'Raleway-SemiBold',
+    fontSize: 17,
+    fontFamily : 'Raleway-Regular',
     textAlign: 'center',
   },
   controllText: {
