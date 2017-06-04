@@ -58,13 +58,13 @@ const defaulStyles = {
   },
   controllText: {
     color: '#fff',
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: 17,
+    fontFamily : 'Raleway-SemiBold',
   },
   dotStyle: {
     backgroundColor: 'rgba(255,255,255,.3)',
-    width: 13,
-    height: 13,
+    width: 11,
+    height: 11,
     borderRadius: 7,
     marginLeft: 7,
     marginRight: 7,
@@ -76,7 +76,7 @@ const defaulStyles = {
   },
   paginationContainer: {
     position: 'absolute',
-    bottom: 25,
+    bottom: 10,
     left: 0,
     right: 0,
     flexDirection: 'row',
@@ -96,11 +96,12 @@ const defaulStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: 50,
+    paddingBottom: 2,
   },
   nextButtonText: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: 'Arial',
+    fontFamily : 'Raleway-SemiBold',
   },
   full: {
     height: 80,
@@ -245,7 +246,7 @@ export default class AppIntro extends Component {
     level,
   }) => {
     const AnimatedStyle1 = this.getTransform(index, 10, level);
-    const AnimatedStyle2 = this.getTransform(index, 0, level);
+    const AnimatedStyle2 = this.getTransform(index, 8, level);
     const AnimatedStyle3 = this.getTransform(index, 15, level);
     const imgSource = (typeof img === 'string') ? {uri: img} : img;
     const pageView = (
