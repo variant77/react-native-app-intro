@@ -21,16 +21,17 @@ const windowsHeight = Dimensions.get('window').height;
 
 const defaulStyles = {
   header: {
-    flex: 0.5,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 0.45,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    backgroundColor: '#cccccc',
   },
   pic: {
     width: 150,
     height: 150,
   },
   info: {
-    flex: 0.5,
+    flex: 0.55,
     alignItems: 'center',
     padding: 30,
   },
@@ -39,16 +40,19 @@ const defaulStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#9DD6EB',
-    padding: 15,
   },
   title: {
-    color: '#fff',
-    fontSize: 30,
+    color: '#000',
+    fontSize: 20,
+    fontFamily : 'Raleway-SemiBold',
     paddingBottom: 20,
+    textAlign: 'center',
   },
   description: {
-    color: '#fff',
-    fontSize: 20,
+    color: '#000',
+    fontSize: 15,
+    fontFamily : 'Raleway-SemiBold',
+    textAlign: 'center',
   },
   controllText: {
     color: '#fff',
@@ -244,9 +248,11 @@ export default class AppIntro extends Component {
     const imgSource = (typeof img === 'string') ? {uri: img} : img;
     const pageView = (
       <View style={[this.styles.slide, { backgroundColor }]} showsPagination={false} key={index}>
-        <Animated.View style={[this.styles.header, ...AnimatedStyle1.transform]}>
+        {/*<Animated.View style={[this.styles.header, ...AnimatedStyle1.transform]}>*/}
+        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start'}}>
           <Image style={imgStyle} source={imgSource} />
-        </Animated.View>
+        </View>
+        {/*</Animated.View>*/}
         <View style={this.styles.info}>
           <Animated.View style={AnimatedStyle2.transform}>
             <Text style={[this.styles.title, { color: fontColor }]}>{title}</Text>
