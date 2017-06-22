@@ -35,7 +35,7 @@ const defaulStyles = {
     alignItems: 'center',
     paddingLeft: 30,
     paddingRight: 30,
-    paddingTop: 20,
+    paddingTop: 50,
   },
   slide: {
     flex: 1,
@@ -45,14 +45,14 @@ const defaulStyles = {
   },
   title: {
     color: '#000',
-    fontSize: 20,
+    fontSize: 21,
     fontFamily : 'Raleway-SemiBold',
-    paddingBottom: 20,
+    paddingBottom: 24,
     textAlign: 'center',
   },
   description: {
     color: '#000',
-    fontSize: 17,
+    fontSize: 18,
     fontFamily : 'Raleway-Regular',
     textAlign: 'center',
   },
@@ -252,7 +252,7 @@ export default class AppIntro extends Component {
     const pageView = (
       <View style={[this.styles.slide, { backgroundColor }]} showsPagination={false} key={index}>
         {/*<Animated.View style={[this.styles.header, ...AnimatedStyle1.transform]}>*/}
-        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start'}}>
+        <View style={{flex: 1.4, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff'}}>
           <Image style={imgStyle} source={imgSource} />
         </View>
         {/*</Animated.View>*/}
