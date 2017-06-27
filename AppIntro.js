@@ -76,7 +76,7 @@ const defaulStyles = {
   },
   paginationContainer: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 14,
     left: 0,
     right: 0,
     flexDirection: 'row',
@@ -92,15 +92,17 @@ const defaulStyles = {
     alignItems: 'center',
   },
   btnContainer: {
-    flex: 0.2,
+    flex: 0.1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 50,
+    height: 40,
     paddingBottom: 2,
+    borderColor: '#fff',
+    borderWidth: 2,
   },
   nextButtonText: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 17,
+    fontWeight: 'normal',
     fontFamily : 'Raleway-SemiBold',
   },
   full: {
@@ -119,7 +121,7 @@ export default class AppIntro extends Component {
 
     this.state = {
       skipFadeOpacity: new Animated.Value(1),
-      doneFadeOpacity: new Animated.Value(0),
+      doneFadeOpacity: new Animated.Value(1),
       nextOpacity: new Animated.Value(1),
       parallax: new Animated.Value(0),
     };
@@ -211,18 +213,21 @@ export default class AppIntro extends Component {
     }
     return (
       <View style={[this.styles.paginationContainer]}>
+        <View style={{flex: 0.02}}/>
         {this.props.showSkipButton ? <SkipButton
           {...this.props}
           {...this.state}
           isSkipBtnShow={isSkipBtnShow}
           styles={this.styles}
           onSkipBtnClick={() => this.props.onSkipBtnClick(index)} /> :
-          <View style={this.styles.btnContainer} />
+          <View style={[this.styles.btnContainer, {borderColor: 'transparent'}]} />
         }
+        <View style={{flex: 0.08}}/>
         {this.props.showDots && RenderDots(index, total, {
           ...this.props,
           styles: this.styles
         })}
+        <View style={{flex: 0.08}}/>
         {this.props.showDoneButton ? <DoneButton
             {...this.props}
             {...this.state}
@@ -232,6 +237,7 @@ export default class AppIntro extends Component {
             onDoneBtnClick={this.props.onDoneBtnClick} /> :
             <View style={this.styles.btnContainer} />
           }
+        <View style={{flex: 0.02}}/>
       </View>
     );
   }

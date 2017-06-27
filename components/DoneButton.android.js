@@ -6,18 +6,18 @@ import {
 } from 'react-native';
 
 export const DoneButton = ({
-  styles, onDoneBtnClick, onNextBtnClick,
-  rightTextColor, isDoneBtnShow,
-  doneBtnLabel, nextBtnLabel,
-}) => {
+                             styles, onDoneBtnClick, onNextBtnClick,
+                             rightTextColor, isDoneBtnShow,
+                             doneBtnLabel, nextBtnLabel,
+                           }) => {
   return (
-    <View style={[styles.btnContainer, { height: 0, paddingBottom: 5 }]}>
+    <View style={[styles.btnContainer, { height: 40, paddingBottom: 5}, isDoneBtnShow ? {backgroundColor: '#fff'} : {backgroundColor: 'transparent'}]}>
       <TouchableOpacity style={styles.full}
-        onPress={ isDoneBtnShow ? onDoneBtnClick : onNextBtnClick}
+                        onPress={ isDoneBtnShow ? onDoneBtnClick : onNextBtnClick}
       >
-       <Text style={[styles.nextButtonText, { color: rightTextColor }]}>
-         {isDoneBtnShow ? doneBtnLabel : nextBtnLabel}
-       </Text>
+        <Text style={[styles.nextButtonText, isDoneBtnShow ? {color: '#9DD6EB'} : { color: rightTextColor }]}>
+          {isDoneBtnShow ? doneBtnLabel : nextBtnLabel}
+        </Text>
       </TouchableOpacity>
     </View>
   )

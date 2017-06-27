@@ -13,7 +13,7 @@ export const DoneButton = ({
   doneFadeOpacity, skipFadeOpacity, nextOpacity
 }) => {
   return (
-    <View style={styles.btnContainer}>
+    <View style={[styles.btnContainer, isDoneBtnShow ? {backgroundColor: '#fff'} : {backgroundColor: 'transparent'}]}>
       <Animated.View style={[styles.full, { height: 0 }, {
         opacity: doneFadeOpacity,
         transform: [{
@@ -25,9 +25,7 @@ export const DoneButton = ({
       }]}
       >
         <View style={styles.full}>
-          <Text style={[styles.controllText, {
-            color: rightTextColor, paddingRight: 30,
-          }]}>
+          <Text style={[styles.controllText, {color: '#9DD6EB'}]}>
             {doneBtnLabel}
           </Text>
         </View>
@@ -45,4 +43,3 @@ export const DoneButton = ({
 }
 
 export default DoneButton
-        
