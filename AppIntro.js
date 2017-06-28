@@ -35,7 +35,7 @@ const defaulStyles = {
     alignItems: 'center',
     paddingLeft: 30,
     paddingRight: 30,
-    paddingTop: 34,
+    paddingTop: 32,
   },
   slide: {
     flex: 1,
@@ -47,7 +47,7 @@ const defaulStyles = {
     color: '#000',
     fontSize: 18,
     fontFamily : 'Raleway-SemiBold',
-    paddingBottom: 18,
+    paddingBottom: 16,
     textAlign: 'center',
   },
   description: {
@@ -76,7 +76,7 @@ const defaulStyles = {
   },
   paginationContainer: {
     position: 'absolute',
-    bottom: 14,
+    bottom: 28,
     left: 0,
     right: 0,
     flexDirection: 'row',
