@@ -35,7 +35,7 @@ const defaulStyles = {
     alignItems: 'center',
     paddingLeft: 30,
     paddingRight: 30,
-    paddingTop: 50,
+    paddingTop: 34,
   },
   slide: {
     flex: 1,
@@ -45,14 +45,14 @@ const defaulStyles = {
   },
   title: {
     color: '#000',
-    fontSize: 21,
+    fontSize: 18,
     fontFamily : 'Raleway-SemiBold',
-    paddingBottom: 24,
+    paddingBottom: 18,
     textAlign: 'center',
   },
   description: {
     color: '#000',
-    fontSize: 18,
+    fontSize: 16,
     fontFamily : 'Raleway-Regular',
     textAlign: 'center',
   },
@@ -222,12 +222,12 @@ export default class AppIntro extends Component {
           onSkipBtnClick={() => this.props.onSkipBtnClick(index)} /> :
           <View style={[this.styles.btnContainer, {borderColor: 'transparent'}]} />
         }
-        <View style={{flex: 0.08}}/>
+        <View style={{flex: 0.04}}/>
         {this.props.showDots && RenderDots(index, total, {
           ...this.props,
           styles: this.styles
         })}
-        <View style={{flex: 0.08}}/>
+        <View style={{flex: 0.04}}/>
         {this.props.showDoneButton ? <DoneButton
             {...this.props}
             {...this.state}
