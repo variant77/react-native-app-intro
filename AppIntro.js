@@ -31,7 +31,7 @@ const defaulStyles = {
     height: 150,
   },
   info: {
-    flex: 0.8,
+    flex: 0.4,
     alignItems: 'center',
     paddingLeft: 30,
     paddingRight: 30,
@@ -254,6 +254,7 @@ export default class AppIntro extends Component {
     backgroundColor,
     fontColor,
     level,
+    imageBackground,
   }) => {
     const AnimatedStyle1 = this.getTransform(index, 10, level);
     const AnimatedStyle2 = this.getTransform(index, 8, level);
@@ -262,8 +263,10 @@ export default class AppIntro extends Component {
     const pageView = (
       <View style={[this.styles.slide, { backgroundColor }]} showsPagination={false} key={index}>
         {/*<Animated.View style={[this.styles.header, ...AnimatedStyle1.transform]}>*/}
-        <View style={{flex: 1.4, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff'}}>
-          <Image style={imgStyle} source={imgSource} />
+        <View style={{flex: 0.8, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff'}}>
+          <Image style={imgStyle} source={imageBackground}>
+            <Image style={imgStyle} source={imgSource} />
+          </Image>
         </View>
         {/*</Animated.View>*/}
         <View style={this.styles.info}>
