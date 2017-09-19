@@ -76,7 +76,7 @@ const defaulStyles = {
   },
   paginationContainer: {
     position: 'absolute',
-    bottom: 17,
+    bottom: 20,
     left: 0,
     right: 0,
     flexDirection: 'column',
@@ -90,6 +90,7 @@ const defaulStyles = {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: 12,
   },
   btnContainer: {
     flex: 0.1,
@@ -241,6 +242,7 @@ export default class AppIntro extends Component {
           styles: this.styles
         })}
         </View>)}
+        <View style={{flex: 0.1}}/>
       </View>
     );
   }
