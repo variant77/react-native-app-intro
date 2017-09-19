@@ -76,17 +76,17 @@ const defaulStyles = {
   },
   paginationContainer: {
     position: 'absolute',
-    bottom: 28,
+    bottom: 17,
     left: 0,
     right: 0,
-    flexDirection: 'row',
+    flexDirection: 'column',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent',
   },
   dotContainer: {
-    flex: 0.6,
+    flex: 0.3,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -95,10 +95,10 @@ const defaulStyles = {
     flex: 0.1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 40,
-    paddingBottom: 2,
+    height: 30,
+    paddingBottom: 0,
     borderColor: '#fff',
-    borderWidth: 2,
+    borderWidth: 0,
   },
   nextButtonText: {
     fontSize: 17,
@@ -226,22 +226,21 @@ export default class AppIntro extends Component {
           onSkipBtnClick={() => this.props.onSkipBtnClick(index)} /> :
           <View style={[this.styles.btnContainer, {borderColor: 'transparent'}]} />
         }
-        <View style={{flex: 0.04}}/>
-        {this.props.showDots && RenderDots(index, total, {
+        {this.props.showDoneButton ? <DoneButton
+          {...this.props}
+          {...this.state}
+          isDoneBtnShow={isDoneBtnShow}
+          styles={this.styles}
+          onNextBtnClick={this.onNextBtnClick.bind(this, context)}
+          onDoneBtnClick={this.props.onDoneBtnClick} /> :
+          <View style={this.styles.btnContainer} />
+        }
+        {this.props.showDots && (<View style={{flexDirection: 'row'}}>
+          {RenderDots(index, total, {
           ...this.props,
           styles: this.styles
         })}
-        <View style={{flex: 0.04}}/>
-        {this.props.showDoneButton ? <DoneButton
-            {...this.props}
-            {...this.state}
-            isDoneBtnShow={isDoneBtnShow}
-            styles={this.styles}
-            onNextBtnClick={this.onNextBtnClick.bind(this, context)}
-            onDoneBtnClick={this.props.onDoneBtnClick} /> :
-            <View style={this.styles.btnContainer} />
-          }
-        <View style={{flex: 0.02}}/>
+        </View>)}
       </View>
     );
   }
