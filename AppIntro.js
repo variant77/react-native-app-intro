@@ -272,10 +272,10 @@ export default class AppIntro extends Component {
         {/*</Animated.View>*/}
         <View style={this.styles.info}>
           <Animated.View style={AnimatedStyle2.transform}>
-            <Text style={[this.styles.title, { color: fontColor }]}>{title}</Text>
+            <Text style={[this.styles.title, { color: fontColor }]} {...this.props.customTextProps}>{title}</Text>
           </Animated.View>
           <Animated.View style={AnimatedStyle3.transform}>
-            <Text style={[this.styles.description, { color: fontColor }]}>{description}</Text>
+            <Text style={[this.styles.description, { color: fontColor }]} {...this.props.customTextProps}>{description}</Text>
           </Animated.View>
         </View>
       </View>
@@ -411,6 +411,7 @@ AppIntro.propTypes = {
   showSkipButton: PropTypes.bool,
   showDoneButton: PropTypes.bool,
   showDots: PropTypes.bool,
+  customTextProps: PropTypes.object,
 };
 
 AppIntro.defaultProps = {

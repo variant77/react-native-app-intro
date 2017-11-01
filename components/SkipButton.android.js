@@ -9,7 +9,7 @@ import {
 export const SkipButton = ({
   styles, onSkipBtnClick, isSkipBtnShow,
   leftTextColor,
-  skipBtnLabel,
+  skipBtnLabel, customTextProps,
   skipFadeOpacity
 }) => {
   return (
@@ -20,7 +20,7 @@ export const SkipButton = ({
       <TouchableOpacity
         style={styles.full}
         onPress={isSkipBtnShow ? () => onSkipBtnClick() : null}>
-        <Text style={[styles.controllText, { color: leftTextColor }]}>
+        <Text style={[styles.controllText, { color: leftTextColor }]} {...customTextProps}>
           {skipBtnLabel}
         </Text>
       </TouchableOpacity>
