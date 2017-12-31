@@ -112,6 +112,21 @@ const defaulStyles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  cancelContainer: {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      left: 0,
+      alignItems: 'flex-end',
+      justifyContent: 'center',
+      zIndex: 1,
+  },
+  cancelIcon: {
+      height: 35,
+      width: 35,
+      marginTop: 30,
+      marginRight: 20,
+  },
 }
 
 export default class AppIntro extends Component {
@@ -361,6 +376,13 @@ export default class AppIntro extends Component {
 
     return (
       <View>
+          {this.props.showCancelButton &&
+            <View style={defaulStyles.cancelContainer}>
+              <TouchableOpacity onPress={this.props.onDoneBtnClick}>
+                <Image source={require('./assets/icon_x_white_border.png')} style={defaulStyles.cancelIcon}/>
+              </TouchableOpacity>
+            </View>
+          }
         {androidPages}
         <Swiper
           loop={false}
@@ -412,6 +434,7 @@ AppIntro.propTypes = {
   showDoneButton: PropTypes.bool,
   showDots: PropTypes.bool,
   customTextProps: PropTypes.object,
+  showCancelButton: PropTypes.bool,
 };
 
 AppIntro.defaultProps = {
@@ -430,5 +453,6 @@ AppIntro.defaultProps = {
   defaultIndex: 0,
   showSkipButton: true,
   showDoneButton: true,
-  showDots: true
+  showDots: true,
+  showCancelButton: true,
 };
