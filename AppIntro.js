@@ -10,6 +10,7 @@ import {
   Dimensions,
   Image,
   Platform,
+  ImageBackground,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import DoneButton from './components/DoneButton';
@@ -280,9 +281,9 @@ export default class AppIntro extends Component {
       <View style={[this.styles.slide, { backgroundColor }]} showsPagination={false} key={index}>
         {/*<Animated.View style={[this.styles.header, ...AnimatedStyle1.transform]}>*/}
         <View style={{flex: 0.8, flexDirection: 'column', justifyContent: 'flex-start', backgroundColor: '#fff'}}>
-          <Image style={imgStyle} source={imageBackground}>
+          <ImageBackground style={imgStyle} source={imageBackground}>
             <Image style={imgStyle} source={imgSource} />
-          </Image>
+          </ImageBackground>
         </View>
         {/*</Animated.View>*/}
         <View style={this.styles.info}>
